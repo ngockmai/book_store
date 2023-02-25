@@ -7,5 +7,6 @@ class BooksController < ApplicationController
     @language = @book.language
     @publisher = @book.publisher
     @genre = @book.genre
+    @authors = @book.authors
   end
 end

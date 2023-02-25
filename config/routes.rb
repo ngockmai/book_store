@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   root 'books#index'
   get 'about', to: 'about#index'
   # get 'books', to: 'books#index'
-  resources :books
+  resources :books, :authors, :publishers
 end

@@ -7,6 +7,11 @@
 <p><strong>Pirce: </strong><%= @book.price %></p>
 <p><strong>Image URL: </strong><%= @book.image_url %></p>
 <p><strong>Language: </strong><%= @language.name %></p>
-<p><strong>Publisher: </strong><%= @publisher.name %></p>
+<p><strong>Publisher: </strong><%= link_to @publisher.name, @publisher %></p>
 <p><strong>Genre: </strong><%= @genre.name %></p>
+<p><strong>Author: </strong>
+<% @authors.each do |author| %>
+  <%= link_to author.name, author %>
+<% end %>
+</p>
 

@@ -1,2 +1,7 @@
 <h1>Publishers#show</h1>
 <p>Find me in app/views/publishers/show.html.erb</p>
+<% @books.each do |book| %>
+  <ul>
+    <li><%= link_to book.title, book %></li>
+  </ul>
+<% end %>
