@@ -1,9 +1,10 @@
 <h1>Books#index</h1>
 <p>Find me in app/views/books/index.html.erb</p>
 <% @books.each do |book| %>
-<ol>
-  <p><strong><%= book.title %></strong></p>
-  <p><%= book.price %></p>
-  <p><%= book.publication_date %></p>
-</ol>
+<p><strong><%= link_to book.title, book %></strong></p>
+<ul>
+
+  <li><p>Price: <%= book.price %></p></li>
+  <li><p>Published: <%= book.publication_date %></p></li>
+</ul>
 <% end %>

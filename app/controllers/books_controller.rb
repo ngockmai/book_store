@@ -4,5 +4,8 @@ class BooksController < ApplicationController
   end
   def show
     @book = Book.find(params[:id])
+    @language = @book.language
+    @publisher = @book.publisher
+    @genre = @book.genre
   end
 end
