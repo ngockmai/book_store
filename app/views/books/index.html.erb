@@ -8,3 +8,6 @@
   <li><p>Published: <%= book.publication_date %></p></li>
 </ul>
 <% end %>
+<div class="pagination">
+  <%= paginate @books, window: 2 %>
+</div>
