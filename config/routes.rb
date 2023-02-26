@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   root 'books#index'
   get 'about', to: 'about#index'
   # get 'books', to: 'books#index'
-  resources :books, :authors, :publishers
+  resources :books, only: %i[index, show] do
+    collection do
+      get 'search'
+    end
+  end
+
+  resources :authors, :publishers
 end
