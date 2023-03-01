@@ -21,17 +21,21 @@
       <div class="container">
         <h2 class="title is-2">List of Books: </h2>
       </div>
-      <%= form_with(url: search_books_path, method: :get, local:true) do |form| %>
+      <div>
+        <%= form_with(url: search_books_path, method: :get, local:true) do |form| %>
         <div class="field is-grouped mb-5">
         <%= form.label :keywords, "Search for:" %>
           <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Books by title or ISBN13") %>
           <%= form.select :genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), { prompt: "Select Genre" } %>
         </div>
-
         <div class="control">
           <%= form.submit "Search", class: "button is-primary" %>
         </div>
       <% end %>
+      <div>
+        <%= link_to "Advanced Search", new_search_path %>
+      </div>
+      </div>
     <%= yield %>
     <section>
     <%if controller_name == 'books' %>

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'publishers/index'
-  get 'publishers/show'
-  get 'authors/index'
-  get 'authors/show'
+  # get 'publishers/index'
+  # get 'publishers/show'
+  # get 'authors/index'
+  # get 'authors/show'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :authors, :publishers, :pages, :searches
+  resources :authors, :publishers, :pages
+  resources :searches
 end
