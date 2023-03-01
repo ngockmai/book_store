@@ -16,5 +16,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :authors, :publishers
+  resources :authors, :publishers, :pages
 end

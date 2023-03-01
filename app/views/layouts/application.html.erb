@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%= tinymce_assets %>
+    <script type="text/javascript" src="/assets/tinymce.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
   </head>
 
@@ -19,17 +21,23 @@
       <div class="container">
         <h2 class="title is-2">List of Books: </h2>
       </div>
-      <%= form_with(url: search_books_path, method: :get) do%>
+      <%= form_with(url: search_books_path, method: :get, local:true) do |form| %>
         <div class="field is-grouped mb-5">
+        <%= form.label :keywords, "Search for:" %>
           <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Books by title or ISBN13") %>
-          <%= select_tag(:genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), {prompt: 'Select a genre'}) %>
+          <%= form.select :genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), { prompt: "Select Genre" } %>
         </div>
 
         <div class="control">
-          <%= submit_tag("search", class: "button is-primary") %>
+          <%= form.submit "Search", class: "button is-primary" %>
         </div>
       <% end %>
     <%= yield %>
     <section>
+    <%if controller_name == 'books' %>
+      <p>No footer in the books page </p>
+    <% else %>
+      <%= render partial: 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

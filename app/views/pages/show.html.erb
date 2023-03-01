@@ -1,0 +1,11 @@
+<h1><%= @page.title %></h1>
+<p><%= @page.content %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_page_path(@page) %></li>
+  <li><%= link_to "Destroy", @page, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  <li><%= link_to "Back to pages", pages_path %></li>
+</ul>

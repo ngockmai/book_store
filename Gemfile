@@ -1,6 +1,9 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+#WYSIWYG editor for rails
+gem 'tinymce-rails'
+
 ruby "3.1.3"
 
 #pagination
