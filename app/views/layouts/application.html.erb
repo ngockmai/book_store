@@ -10,38 +10,23 @@
     <%= javascript_importmap_tags %>
     <%= tinymce_assets %>
     <script type="text/javascript" src="/assets/tinymce/tinymce.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma-rtl.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body>
-  <div>
-    <%= render partial: 'layouts/navbar' %>
-  </div>
+    <div>
+      <%= render partial: 'layouts/navbar' %>
+    </div>
     <section>
-      <div class="container">
-        <h2 class="title is-2">List of Books: </h2>
-      </div>
-      <div>
-        <%= form_with(url: search_books_path, method: :get, local:true) do |form| %>
-        <div class="field is-grouped mb-5">
-        <%= form.label :keywords, "Search for:" %>
-          <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Books by title or ISBN13") %>
-          <%= form.select :genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), { prompt: "Select Genre" } %>
-        </div>
-        <div class="control">
-          <%= form.submit "Search", class: "button is-primary" %>
-        </div>
-      <% end %>
-      <div>
-        <%= link_to "Advanced Search", new_search_path %>
-      </div>
-      </div>
     <%= yield %>
-    <section>
-    <%if controller_name == 'books' %>
-      <p>No footer in the books page </p>
-    <% else %>
-      <%= render partial: 'layouts/footer' %>
-    <% end %>
+    </section>
+      <%if controller_name == 'books' %>
+        <p>No footer in the books page </p>
+      <% else %>
+        <%= render partial: 'layouts/footer' %>
+      <% end %>
   </body>
 </html>

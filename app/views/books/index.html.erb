@@ -1,12 +1,61 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
-<% @books.each do |book| %>
-<p><strong><%= link_to book.title, book %></strong></p>
-<ul>
+<h2>
+  <span>New Releases Books</span>
+</h2>
 
-  <li><p>Price: <%= book.price %></p></li>
-  <li><p>Published: <%= book.publication_date %></p></li>
-</ul>
+<% @books.in_groups_of(4) do |book1, book2, book3, book4| %>
+  <div class="container">
+		<div class="row">
+			<div class ="col-sm-3">
+				<div class="panel panel-primary">
+					<div class="panel-heading"><%= link_to truncate(book1.title, length: 30), book1, :style=>"color: #fff" %></div>
+				      <div class="panel-body">
+					      <img src="<%= book1.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="Python">
+						  </div>
+					    <div class="panel-footer">
+						    <strong>Price: </strong>$<%= book1.price %>
+							  <button type="button" class="btn btn-success">Add To Cart</button>
+						  </div>
+					    </div>
+				  </div>
+			<div class ="col-sm-3">
+        <div class="panel panel-danger">
+          <div class="panel-heading"><%= link_to truncate(book2.title, length: 30), book2 %></div>
+            <div class="panel-body">
+              <img src="<%= book2.image_url %>"class="img-responsive" style="width:250px; height:250px;" alt="Java">
+            </div>
+            <div class="panel-footer">
+							<strong>Price: </strong>$<%= book2.price %>
+              <button type="button" class="btn btn-success">Add To Cart</button>
+						</div>
+				  </div>
+				</div>
+        <div class ="col-sm-3">
+          <div class="panel panel-primary">
+            <div class="panel-heading"><%= link_to truncate(book3.title, length: 30), book3, :style=>"color: #fff"%></div>
+              <div class="panel-body">
+                <img src="<%= book3.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="WAP">
+              </div>
+              <div class="panel-footer">
+							  <strong>Price: </strong>$<%= book3.price %>
+							  <button type="button" class="btn btn-success">Add To Cart</button>
+						</div>
+					</div>
+				</div>
+				<div class ="col-sm-3">
+          <div class="panel panel-danger">
+            <div class="panel-heading"><%= link_to truncate(book4.title, length: 30), book4 %></div>
+              <div class="panel-body">
+                <img src="<%= book4.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="LSS">
+						</div>
+            <div class="panel-footer">
+							<strong>Price: </strong>$<%= book4.price %>
+              <button type="button" class="btn btn-success">Add To Cart</button>
+            </div>
+          </div>
+				</div>
+      </div>
+    </div>
+
 <% end %>
 <div class="pagination">
   <%= paginate @books %>
