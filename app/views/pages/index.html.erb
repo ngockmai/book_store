@@ -3,12 +3,16 @@
 <h1>Pages</h1>
 
 <div id="pages">
-  <% @pages.each do |page| %>
-    <%= render page %>
-    <p>
-      <%= link_to "Show this page", page %>
-    </p>
-  <% end %>
+  <ul>
+      <% @pages.each do |page| %>
+      <li>
+        <%= page.title %>
+        <p>
+          <%= link_to "Show this page", page %>
+        </p>
+      </li>
+      <% end %>
+  </ul>
 </div>
 
 <%= link_to "New page", new_page_path %>
