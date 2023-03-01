@@ -21,7 +21,8 @@
       </div>
       <%= form_with(url: search_books_path, method: :get) do%>
         <div class="field is-grouped mb-5">
-          <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Books") %>
+          <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Books by title or ISBN13") %>
+          <%= select_tag(:genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), {prompt: 'Select a genre'}) %>
         </div>
 
         <div class="control">
