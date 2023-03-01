@@ -7,4 +7,5 @@ class Book < ApplicationRecord
   has_many :authors, through: :book_authors
 
   validates :title, :isbn13, :publication_date, :language_id, :publisher_id, :genre_id, presence: true
+
 end
