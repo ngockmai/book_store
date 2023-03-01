@@ -23,10 +23,12 @@
     <section>
     <%= yield %>
     </section>
+
       <%if controller_name != 'books' %>
         <p>No footer in the books page </p>
       <% else %>
         <%= render partial: 'layouts/footer' %>
       <% end %>
+
   </body>
 </html>
