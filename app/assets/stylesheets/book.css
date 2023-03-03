@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 1.5rem 0;
+}
+.banner {
+  background: #475d72;
+  padding: 1rem 0;
+}
+.banner h1 {
+  color: #fff;
+}
+.banner h1,
+h2 {
+  text-align: center;
+}

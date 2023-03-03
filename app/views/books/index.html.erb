@@ -1,53 +1,55 @@
-<center><h2><strong><p style="margin: 0 0 20px">New Releases Books</p></strong></h2></center>
-
 <% @books.in_groups_of(4) do |book1, book2, book3, book4| %>
   <div class="container">
 		<div class="row">
-			<div class ="col-sm-3">
-				<div class="panel panel-primary">
-					<div class="panel-heading"><%= link_to truncate(book1.title, length: 30), book1 %></div>
-				      <div class="panel-body">
-					      <img src="<%= book1.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="Python">
+			<div class ="col-sm-3 my-3">
+				<div class="card border border-primary-subtle">
+					<div class="card-header bg-primary-subtle"><%= link_to truncate(book1.title, length: 30), book1, :class => "text-body-secondary text-decoration-none" %></div>
+				      <div class="card-body">
+					      <img src="<%= book1.image_url %>"class="img-responsive" style="width:250px; height:300px;" alt="Python">
 						  </div>
-					    <div class="panel-footer">
-						    <strong>Price: </strong>$<%= book1.price %>
-							  <button type="button" class="btn btn-success">Add To Cart</button>
+					    <div class="card-footer">
+								<div>
+									<strong>Price: </strong>$<%= book1.price %>
+								</div>
+						    <div>
+									<button type="button" class="btn btn-secondary">Add To Cart</button>
+								</div>
 						  </div>
 					    </div>
 				  </div>
-			<div class ="col-sm-3">
-        <div class="panel panel-danger">
-          <div class="panel-heading"><%= link_to truncate(book2.title, length: 30), book2 %></div>
-            <div class="panel-body">
-              <img src="<%= book2.image_url %>"class="img-responsive" style="width:250px; height:250px;" alt="Java">
+			<div class ="col-sm-3 my-3">
+        <div class="card border border-danger-subtle">
+          <div class="card-header bg-danger-subtle"><%= link_to truncate(book2.title, length: 30), book2, :class => "text-body-secondary text-decoration-none" %></div>
+            <div class="card-body">
+              <img src="<%= book2.image_url %>"class="img-responsive" style="width:250px; height:300px;" alt="Java">
             </div>
-            <div class="panel-footer">
+            <div class="card-footer">
 							<strong>Price: </strong>$<%= book2.price %>
-              <button type="button" class="btn btn-success">Add To Cart</button>
+              <button type="button" class="btn btn-secondary">Add To Cart</button>
 						</div>
 				  </div>
 				</div>
-        <div class ="col-sm-3">
-          <div class="panel panel-primary">
-            <div class="panel-heading"><%= link_to truncate(book3.title, length: 30), book3 %></div>
-              <div class="panel-body">
-                <img src="<%= book3.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="WAP">
+        <div class ="col-sm-3 my-3">
+          <div class="card border border-primary-subtle">
+            <div class="card-header bg-primary-subtle"><%= link_to truncate(book3.title, length: 30), book3, :class => "text-body-secondary text-decoration-none" %></div>
+              <div class="card-body">
+                <img src="<%= book3.image_url %>"class="img-responsive" style="width:250px; height:300px;" alt="WAP">
               </div>
-              <div class="panel-footer">
+              <div class="card-footer">
 							  <strong>Price: </strong>$<%= book3.price %>
-							  <button type="button" class="btn btn-success">Add To Cart</button>
+							  <button type="button" class="btn btn-secondary">Add To Cart</button>
 						</div>
 					</div>
 				</div>
-				<div class ="col-sm-3">
-          <div class="panel panel-danger">
-            <div class="panel-heading"><%= link_to truncate(book4.title, length: 30), book4 %></div>
-              <div class="panel-body">
-                <img src="<%= book4.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="LSS">
+				<div class ="col-sm-3 my-3">
+          <div class="card border border-danger-subtle">
+            <div class="card-header bg-danger-subtle"><%= link_to truncate(book4.title, length: 30), book4, :class => "text-body-secondary text-decoration-none" %></div>
+              <div class="card-body">
+                <img src="<%= book4.image_url %>"class="img-responsive" style="width:250px; height:300px;" alt="LSS">
 						</div>
-            <div class="panel-footer">
+            <div class="card-footer">
 							<strong>Price: </strong>$<%= book4.price %>
-              <button type="button" class="btn btn-success">Add To Cart</button>
+              <button type="button" class="btn btn-secondary">Add To Cart</button>
             </div>
           </div>
 				</div>
