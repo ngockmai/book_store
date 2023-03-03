@@ -5,7 +5,7 @@
 		<div class="row">
 			<div class ="col-sm-3">
 				<div class="panel panel-primary">
-					<div class="panel-heading"><%= link_to truncate(book1.title, length: 30), book1, :style=>"color: #fff" %></div>
+					<div class="panel-heading"><%= link_to truncate(book1.title, length: 30), book1 %></div>
 				      <div class="panel-body">
 					      <img src="<%= book1.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="Python">
 						  </div>
@@ -29,7 +29,7 @@
 				</div>
         <div class ="col-sm-3">
           <div class="panel panel-primary">
-            <div class="panel-heading"><%= link_to truncate(book3.title, length: 30), book3, :style=>"color: #fff"%></div>
+            <div class="panel-heading"><%= link_to truncate(book3.title, length: 30), book3 %></div>
               <div class="panel-body">
                 <img src="<%= book3.image_url %>"class="img-responsive" style="width:250px;height:250px;" alt="WAP">
               </div>
