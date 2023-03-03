@@ -1,6 +1,6 @@
-<p class="mb-5">
-  Book found when searching for: <%= params[:keywords] %>
-</p>
+<h3>
+  Search results for keyword: <i class="text-secondary">"<%= params[:keywords] %>"</i>
+</h3>
 
 <ul>
   <% @books.each do |book|%>

@@ -6,7 +6,6 @@ class SearchesController < ApplicationController
 
   def new
     @search = Search.new
-    @genre = Genre.uniq.pluck(:name)
   end
 
   def create

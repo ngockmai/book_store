@@ -1,4 +1,4 @@
-<header class="p-3 mb-3 border-bottom">
+<header class="p-3 mb-3 border-bottom bg-body-secondary">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -11,11 +11,15 @@
           <li><%= link_to "Home", root_path, :class => "nav-link px-2 link-secondary" %></li>
 				  <li><%= link_to "About", "/pages/8", :class =>"nav-link px-2 link-dark" %></li>
         </ul>
-
-        <form class="col-8 col-lg-8 mb-3 mb-lg-0 me-lg-3">
+        <%= form_with(url: search_books_path, method: :get, local:true, html: {class: "col-8 col-lg-8 mb-3 mb-lg-0 me-lg-3 d-flex"}) do |form| %>
+            <%= search_field_tag( :keywords, nil, class: "form-control", placeholder: "Search books by Title or ISBN13" ) %>
+            <%= form.select :genre_id, options_for_select(Genre.all.map{|c| [c.name, c.id]}), { prompt: "Select Genre" } %>
+            <%= form.submit "Search", class: "button is-primary" %>
+        <% end %>
+        <%# <form class="col-8 col-lg-8 mb-3 mb-lg-0 me-lg-3 d-flex">
           <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-          <button type="button" class="btn btn-primary">Primary</button>
-        </form>
+          <button type="button" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form> %>
 
         <%# <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
