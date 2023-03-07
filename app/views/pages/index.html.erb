@@ -1,18 +1,23 @@
-<p style="color: green"><%= notice %></p>
+<div class= "container">
+  <div class = "row">
+    <p style="color: green"><%= notice %></p>
 
-<h1>Pages</h1>
+    <h1>Pages</h1>
 
-<div id="pages">
-  <ul>
-      <% @pages.each do |page| %>
-      <li>
-        <%= page.title %>
-        <p>
-          <%= link_to "Show this page", page %>
-        </p>
-      </li>
-      <% end %>
-  </ul>
+    <div id="pages">
+      <ul>
+          <% @pages.each do |page| %>
+          <li>
+            <%= page.title %>
+            <p>
+              <%= link_to "Show this page", page %>
+            </p>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+
+    <%= link_to "New page", new_page_path %>
+
+  </div>
 </div>
-
-<%= link_to "New page", new_page_path %>

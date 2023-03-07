@@ -1,9 +1,13 @@
-<h3>
-  Search results for keyword: <i class="text-secondary">"<%= params[:keywords] %>"</i>
-</h3>
+<div class="container">
+  <div class="row py-3">
+    <h3>
+      List of books for keyword: <i class="text-secondary">"<%= params[:keywords] %>"</i>
+    </h3>
 
-<ul>
-  <% @books.each do |book|%>
-    <li> <%= link_to book.title, book %></li>
-  <% end %>
-</ul>
+    <ul>
+      <% @books.each do |book|%>
+        <li> <%= link_to book.title, book %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

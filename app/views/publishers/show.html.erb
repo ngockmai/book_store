@@ -1,7 +1,21 @@
-<h1>Publishers#show</h1>
-<p>Find me in app/views/publishers/show.html.erb</p>
-<% @books.each do |book| %>
-  <ul>
-    <li><%= link_to book.title, book %></li>
-  </ul>
-<% end %>
+<div class = "container">
+  <div class ="row">
+  <h2 class = "p-3" >List of books from Publisher: <%= @publisher.name %></h2>
+    <div class = "col-sm-12 my-3">
+      <div class="p-2">
+        <table class="table table-responsive table-striped">
+          <tbody>
+            <% @books.each do |book| %>
+              <tr>
+                <td style="width: 40%" ><%= @books.index(book) + 1 %></td>
+                <td style="width: 60%"><%= link_to book.title, book %></td>
+              </tr>
+            <% end %>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
