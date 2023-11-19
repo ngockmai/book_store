@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'books#index'
   get 'about', to: 'about#index'
-  # get 'books', to: 'books#index'
+  get 'books', to: 'books#index'
   resources :books do
     collection do
       get 'search'
@@ -18,5 +18,4 @@ Rails.application.routes.draw do
 
   resources :authors, :publishers, :pages
   resources :searches
-  resources: :books
 end
