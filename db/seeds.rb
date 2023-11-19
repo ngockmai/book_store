@@ -10,6 +10,10 @@ require 'csv'
 require 'faker'
 require_relative '../app/models/ar.rb'
 
+
+
+
+
 Author.destroy_all
 Publisher.destroy_all
 Genre.destroy_all
