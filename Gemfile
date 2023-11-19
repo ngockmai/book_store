@@ -1,7 +1,14 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+#WYSIWYG editor for rails
+gem 'tinymce-rails'
+
 ruby "3.1.3"
+
+#pagination
+gem 'kaminari'
+gem 'bootstrap5-kaminari-views'
 
 #faker general
 gem 'faker'
@@ -78,3 +85,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "dockerfile-rails", ">= 1.2", :group => :development

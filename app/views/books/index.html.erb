@@ -1,0 +1,75 @@
+<% @books.in_groups_of(4) do |book1, book2, book3, book4| %>
+  <div class="container">
+		<div class="row">
+			<div class ="col-md-3 my-3">
+				<div class="card border border-primary-subtle">
+					<div class="card-header bg-primary-subtle"><%= link_to book1.try(:title).truncate_words(4), book1, :class => "text-body-secondary text-decoration-none" %></div>
+				      <div class="card-body d-flex justify-content-center">
+					      <img src="<%= book1.image_url %>" class = "img-responsive img-fluid" style="width: 250px; height: 300px;" alt="<%= book1.try(:title) if book1%>">
+						  </div>
+					    <div class="card-footer d-flex flex-row justify-content-center">
+								<div class="p-2">
+									<strong>Price: </strong>$<%= book1.price %>
+								</div>
+						    <div class="px-2">
+									<button type="button" class="btn btn-secondary">Add To Cart</button>
+								</div>
+						  </div>
+					    </div>
+				  </div>
+			<div class ="col-md-3 my-3">
+        <div class="card border border-danger-subtle">
+          <div class="card-header bg-danger-subtle"><%= link_to book2.try(:title).truncate_words(4), book2, :class => "text-body-secondary text-decoration-none" %></div>
+            <div class="card-body d-flex justify-content-center">
+              <img src="<%= book2.image_url %>" class = "img-responsive" style="width: 250px; height: 300px;" alt="<%= book2.try(:title) if book2%>">
+            </div>
+            <div class="card-footer d-flex flex-row justify-content-center">
+								<div class="p-2">
+									<strong>Price: </strong>$<%= book2.price %>
+								</div>
+						    <div class="px-2">
+									<button type="button" class="btn btn-secondary">Add To Cart</button>
+								</div>
+						  </div>
+				  </div>
+				</div>
+        <div class ="col-md-3 my-3">
+          <div class="card border border-primary-subtle">
+            <div class="card-header bg-primary-subtle"><%= link_to book3.try(:title).truncate_words(4), book3, :class => "text-body-secondary text-decoration-none" if book3 %></div>
+              <div class="card-body d-flex justify-content-center">
+                <img src="<%= book3.try(:image_url) if book3 %>" class="img-responsive" style="width: 250px; height: 300px;" alt="<%= book3.try(:title) if book3%>">
+              </div>
+              <div class="card-footer d-flex flex-row justify-content-center">
+								<div class="p-2">
+									<strong>Price: </strong>$<%= book3.try(:price) if book3 %>
+								</div>
+						    <div class="px-2">
+									<button type="button" class="btn btn-secondary">Add To Cart</button>
+								</div>
+						  </div>
+					</div>
+				</div>
+				<div class ="col-md-3 my-3">
+          <div class="card border border-danger-subtle">
+            <div class="card-header bg-danger-subtle"><%= link_to book4.try(:title).truncate_words(4), book4, :class => "text-body-secondary text-decoration-none" if book4 %></div>
+              <div class="card-body d-flex justify-content-center">
+                <img src="<%= book4.try(:image_url) %>" class="img-responsive" style="width: 250px; height: 300px;" alt="<%= book4.try(:title) if book4%>">
+						</div>
+            <div class="card-footer d-flex flex-row justify-content-center">
+								<div class="p-2">
+									<strong>Price: </strong>$<%= book4.try(:price) if book4 %>
+								</div>
+						    <div class="px-2">
+									<button type="button" class="btn btn-secondary">Add To Cart</button>
+								</div>
+						  </div>
+          </div>
+				</div>
+      </div>
+    </div>
+<% end %>
+<div class="container">
+	<%= paginate @books, theme: 'bootstrap-5',
+                   pagination_class: "pagination d-flex justify-content-center my-3",
+                   nav_class: "" %>
+</div>

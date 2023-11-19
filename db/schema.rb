@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_17_210850) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_045700) do
   create_table "authors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -56,8 +56,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_17_210850) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.string "content"
+    t.string "permalink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "publishers", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "searches", force: :cascade do |t|
+    t.string "keywords"
+    t.decimal "min_price"
+    t.decimal "max_price"
+    t.integer "isbn13"
+    t.string "genre"
+    t.string "author"
+    t.string "publisher"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,80 @@
+<div class = "container">
+  <div class ="row">
+    <div class = "col-md-4 my-3">
+      <div class="p-2 text-center">
+        <img src="<%= @book.image_url %>" class="img-responsive" style="width:250px; height:300px;" alt="<%= @book.title %>">
+      </div>
+    </div>
+    <div class = "col-md-8 my-3">
+      <div class="p-2">
+        <table class="table table-striped">
+          <tbody>
+          <tr>
+            <td><strong>Title</strong></td>
+            <td><%= @book.title %></td>
+          </tr>
+          <tr>
+            <td><strong>ISBN13</strong></td>
+            <td><%= @book.isbn13 %></td>
+          </tr>
+          <tr>
+            <td><strong>Author</strong></td>
+            <td>
+              <% @authors.each do |author| %>
+                <%= link_to author.name, author %>
+              <% end %>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Publisher</strong></td>
+            <td><%= link_to @publisher.name, @publisher %></td>
+          </tr>
+          <tr>
+            <td><strong>Publication Date</strong></td>
+            <td><%= @book.publication_date %></td>
+          </tr>
+          <tr>
+            <td><strong>Number of Pages</strong></td>
+            <td><%= @book.num_pages %></td>
+          </tr>
+          <tr>
+            <td><strong>Language</strong></td>
+            <td><%= @language.name %></td>
+          </tr>
+          <tr>
+            <td><strong>Genre</strong></td>
+            <td><%= @genre.name %></td>
+          </tr>
+          <tr>
+            <td><strong>Pirce</strong></td>
+            <td>$<%= @book.price %></td>
+          </tr>
+        </tbody>
+        </table>
+      </div>
+
+      <div class="p-2">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Description</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Authors</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active p-3" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"><%= @book.description %></div>
+          <div class="tab-pane fade p-3" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <% @authors.each do |author| %>
+              <ul>
+                <li><%= link_to author.name, author %></li>
+              </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
