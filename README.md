@@ -31,3 +31,12 @@ ERD diagram:
 ## Screenshot of this project
 
 ![Screenshot-1](/db/bookstore.jpg)
+
+## How to install?
+1. Git clone this project.
+2. bundle install
+4. rails db:migrate
+5. rails db:seed
+6. rails server -p 3000
+
+Enjoy!!!
