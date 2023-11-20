@@ -12,7 +12,7 @@ A client wants to build an online bookstore. The project includes two stages:
 
 ## Database
 
-- Dataset: I used a crawling tool to grab a dataset stored in .db/book_store_dataset.csv. The data is grabbed from [hullsbookstores.com](https://hullsbookstores.com) - a local bookstore in Winnipeg. This data is only used for learning purpose.
+- Dataset: I used a crawling tool to grab a dataset stored in .db/book_store_dataset.csv. The data is grabbed from [hullsbookstores.com](https://hullsbookstores.com) - a local bookstore in Winnipeg, Canada. This data is only used for learning purpose.
 
 - This project uses sqlite to store data. All databases can be found at ./db
 
