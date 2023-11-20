@@ -17,7 +17,7 @@ A client wants to build an online bookstore. The project includes two stages:
 - This project uses sqlite to store data. All databases can be found at ./db
 
 ERD diagram:
-! [ERD diagram](/db/book_store_intro_project.png)
+![ERD-diagram](/db/book_store_intro_project.png)
 
 ## Some features of this project:
 
@@ -30,4 +30,4 @@ ERD diagram:
 
 ## Screenshot of this project
 
-! [Screenshot 1!](/db/bookstore.jpg)
+![Screenshot-1](/db/bookstore.jpg)
